@@ -1,35 +1,23 @@
-// navigators/TabNavigator.tsx
-
-import * as React from 'react';
-import { useColorScheme } from '../hooks/use-color-scheme';
+import { createStackNavigator } from '@react-navigation/stack';
+import DetailsScreen from '../screens/DetailsScreen';
+import LoginScreen from '../screens/LoginScreen';
 import { RootStackParamList } from '../types/navigation.types';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { DarkTheme, DefaultTheme, NavigationContainer, ThemeProvider } from '@react-navigation/native';
-import { StatusBar } from 'expo-status-bar';
-import TabNavigator from './TabNavigator';
-import ModalScreen from '../screens/Modal';
+import { DrawerNavigator } from './DrawerNavigation';
 
+const Stack = createStackNavigator<RootStackParamList>();
 
-const Stack = createNativeStackNavigator<RootStackParamList>();
-
-export default function RootStackNavigator() {
-  const colorScheme = useColorScheme();
-
+export function RootStackNavigator() {
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <NavigationContainer>
-        <Stack.Navigator initialRouteName="HomeTabs">
-          <Stack.Screen
-            name="HomeTabs"
-            component={TabNavigator}
-            options={{ headerShown: false }} // Hide the stack header for the tabs screen
-          />
-          <Stack.Screen name="Modal" component={ModalScreen} />
-        </Stack.Navigator>
-      </NavigationContainer>
-      <StatusBar style="auto" />
-    </ThemeProvider>
+    <Stack.Navigator initialRouteName="MainApp">
+      {/* The main application flow (drawer) */}
+      <Stack.Screen 
+        name="MainApp" 
+        component={DrawerNavigator} 
+        options={{ headerShown: false }} // Hide stack header for the screen that renders the drawer
+      />
+      {/* Other stack screens (e.g., details, login) */}
+      <Stack.Screen name="Details" component={DetailsScreen} options={{ title: 'Details' }} />
+      <Stack.Screen name="Login" component={LoginScreen} />
+    </Stack.Navigator>
   );
 }
-
-
