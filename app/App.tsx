@@ -10,8 +10,3 @@ export default function App() {
   );
 }
 
-export function App2() {
-  return (
-    <RootStackNavigator />
-  );
-}

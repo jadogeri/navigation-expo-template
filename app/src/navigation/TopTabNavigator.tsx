@@ -1,3 +1,5 @@
+import React from "react";
+
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import ScreenA from '../screens/ScreenA';
 import { MaterialTopTabParamList } from '../types/navigation.types';

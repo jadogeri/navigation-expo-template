@@ -1,3 +1,4 @@
+import React from "react";
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { BottomTabsNavigator } from './BottomTabNavigator'; // Import the bottom tabs
 import { DrawerParamList } from '../types/navigation.types';

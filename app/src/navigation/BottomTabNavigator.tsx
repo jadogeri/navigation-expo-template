@@ -1,3 +1,5 @@
+import React from "react";
+
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import { MaterialTopTabsNavigator } from './TopTabNavigator'; // Import the top tabs
