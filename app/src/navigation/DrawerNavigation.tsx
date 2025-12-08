@@ -4,13 +4,17 @@ import { BottomTabsNavigator } from './BottomTabNavigator'; // Import the bottom
 import { DrawerParamList } from '../types/navigation.types';
 import ProfileScreen from '../screens/ProfileScreen';
 import SettingsScreen from '../screens/SettingsScreen';
+import DrawerContent from "../components/DrawerContent";
 
 
 const Drawer = createDrawerNavigator<DrawerParamList>();
 
 export function DrawerNavigator() {
   return (
-    <Drawer.Navigator initialRouteName="HomeDrawer">
+    <Drawer.Navigator initialRouteName="HomeDrawer"
+              drawerContent={(props) => <DrawerContent {...props} />}
+
+    >
       {/* The main content (tabs) goes here */}
       <Drawer.Screen 
         name="HomeDrawer" 

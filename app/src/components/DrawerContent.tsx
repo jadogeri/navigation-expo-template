@@ -18,8 +18,9 @@ import {
 } from '@react-navigation/drawer';
 
 import Icon from 'react-native-vector-icons/Ionicons';
+import styles from './DrawerContentStyles';
+import { useAppContext } from '../contexts/ThemeContext';
 
-// import styles from './DrawerContentStyles';
 //import { Context as AuthContext } from '../../context/AuthContext'
 // import useToggleTheme from '../../hooks/useTheme';
 
@@ -34,11 +35,12 @@ import Icon from 'react-native-vector-icons/Ionicons';
 // const value = initializeApp(firebaseConfig)
 // console.log(value)
  const DrawerContent = (props: any) => {
+      const { state: appState, toggleTheme } = useAppContext();
 
-    const [toggleTheme, themeState] = useToggleTheme();
-     const {isDarkTheme} = themeState;
+    //const [toggleTheme, themeState] = useToggleTheme();
+    //const {isDarkTheme} = themeState;
 
-     console.log("theme state in drawer",JSON.stringify(themeState))
+    // console.log("theme state in drawer",JSON.stringify(themeState))
     //const [isDarkTheme,setIsDarkTheme]=useState(false);
     // const toggleTheme = () =>{
     //     setIsDarkTheme(!isDarkTheme);
@@ -46,18 +48,18 @@ import Icon from 'react-native-vector-icons/Ionicons';
     //const { state,signout } = useContext(AuthContext);
     //const { username, email, id } = state
     const paperTheme = useTheme();
-    const auth = getAuth();
-    const sign_out = ()=>{
+    // const auth = getAuth();
+    // const sign_out = ()=>{
 
-        signOut(auth)
-        .then(()=>{AsyncStorage.clear();
-                   alert("user signed out")})
-        .catch((e)=> alert(e))
-       //navigation.navigate("Login")
-    //    alert(typeof signOut);
-    //    alert(signOut === undefined ? "yes":"no")
+    //     signOut(auth)
+    //     .then(()=>{AsyncStorage.clear();
+    //                alert("user signed out")})
+    //     .catch((e)=> alert(e))
+    //    //navigation.navigate("Login")
+    // //    alert(typeof signOut);
+    // //    alert(signOut === undefined ? "yes":"no")
       
-    }
+    // }
 
     return <View style={{ flex: 1 }}>
         <DrawerContentScrollView {...props} >
@@ -151,12 +153,13 @@ import Icon from 'react-native-vector-icons/Ionicons';
                     />
                 </Drawer.Section>
                 <Drawer.Section title="Preferences">
-                    <TouchableRipple onPress={() => {alert("pressing toggle");toggleTheme()
+                    <TouchableRipple onPress={() => {alert("pressing toggle"); toggleTheme()
                     }}>
                         <View style={styles.preference}>
                             <Text>Dark Theme</Text>
                             <View pointerEvents="none">
-                                <Switch value={isDarkTheme} />
+                                {/* <Switch value={isDarkTheme} /> */}
+                           
                             </View>
                         </View>
                     </TouchableRipple>
@@ -173,9 +176,9 @@ import Icon from 'react-native-vector-icons/Ionicons';
                     />
                 )}
                 label="Sign Out"
-                onPress={() => { sign_out()
+                onPress={() => { //sign_out() 
 
-                 }}
+                }}
             />
         </Drawer.Section>
     </View>
