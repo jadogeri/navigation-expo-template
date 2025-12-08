@@ -153,12 +153,13 @@ import { useAppContext } from '../contexts/ThemeContext';
                     />
                 </Drawer.Section>
                 <Drawer.Section title="Preferences">
-                    <TouchableRipple onPress={() => {alert("pressing toggle"); toggleTheme()
+                    <TouchableRipple onPress={() => { //alert("pressing toggle");
+                     toggleTheme();
                     }}>
                         <View style={styles.preference}>
                             <Text>Dark Theme</Text>
                             <View pointerEvents="none">
-                                {/* <Switch value={isDarkTheme} /> */}
+                                <Switch value={appState.isDark} />
                            
                             </View>
                         </View>

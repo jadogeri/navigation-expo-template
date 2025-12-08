@@ -1,4 +1,5 @@
-import { DefaultTheme } from "@react-navigation/native";
+import { DarkTheme, DefaultTheme } from "@react-navigation/native";
+import type { Theme as NavigationTheme } from '@react-navigation/native';
 import { createDataContext } from "./CreateDataContext";
 
 const initialState = { theme: DefaultTheme, isDarkTheme : false }
@@ -15,8 +16,9 @@ import { Dispatch } from 'react';
 
 // Define the state type
 interface AppState {
-  theme: 'light' | 'dark';
+  theme: NavigationTheme
   notificationsEnabled: boolean;
+  isDark: boolean;
 }
 
 // Define action types
@@ -40,7 +42,12 @@ const actions = { toggleTheme, toggleNotifications };
 const appReducer = (state: AppState, action: AppAction): AppState => {
   switch (action.type) {
     case 'TOGGLE_THEME':
-      return { ...state, theme: state.theme === 'light' ? 'dark' : 'light' };
+      if(!state.isDark){
+        return { ...state, theme: DarkTheme, isDark: true};      
+      }else{
+        return { ...state, theme: DefaultTheme, isDark: false};      
+      }
+      
     case 'TOGGLE_NOTIFICATIONS':
       return { ...state, notificationsEnabled: !state.notificationsEnabled };
     default:
@@ -50,10 +57,15 @@ const appReducer = (state: AppState, action: AppAction): AppState => {
 
 // Default state
 const defaultState: AppState = {
-  theme: 'light',
+  theme: DefaultTheme,
+  isDark: false,
   notificationsEnabled: true,
 };
 
 // Create the context, provider, and hook
 export const { Provider: AppProvider, useContextHook: useAppContext } = 
   createDataContext(appReducer, actions, defaultState);
+
+
+
+
