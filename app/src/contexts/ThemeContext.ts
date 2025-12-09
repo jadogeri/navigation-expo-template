@@ -1,14 +1,37 @@
 import { DarkTheme, DefaultTheme } from "@react-navigation/native";
 import type { Theme as NavigationTheme } from '@react-navigation/native';
 import { createDataContext } from "./CreateDataContext";
+import { 
+  DefaultTheme as NavigationDefaultTheme,
+  DarkTheme as NavigationDarkTheme
+} from '@react-navigation/native';
+import { 
+  Provider as PaperProvider, 
+  DefaultTheme as PaperDefaultTheme,
+  MD3DarkTheme as PaperDarkTheme 
+} from 'react-native-paper'
 
 const initialState = { theme: DefaultTheme, isDarkTheme : false }
 
-// export const { Provider, Context } = createDataContext(
-//     themeReducer ,
-//     { toggleTheme },
-//     initialState
-// );
+  const CustomDefaultTheme = {
+    ...NavigationDefaultTheme,
+    ...PaperDefaultTheme,
+      background: '#ffffff',
+      text: '#333333'
+    
+  }
+  
+  const CustomDarkTheme = {
+    ...NavigationDarkTheme,
+    ...PaperDarkTheme,
+    ...NavigationDarkTheme,
+      ...PaperDarkTheme,
+      background: '#333333',
+      text: '#ffffff'
+    
+  }
+
+    const theme = initialState.isDarkTheme ? CustomDarkTheme : CustomDefaultTheme;
 
 
 import { Dispatch } from 'react';

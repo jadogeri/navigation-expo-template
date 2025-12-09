@@ -4,7 +4,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import DetailsScreen from '../screens/DetailsScreen';
 import LoginScreen from '../screens/LoginScreen';
 import { RootStackParamList } from '../types/navigation.types';
-import { DrawerNavigator } from './DrawerNavigation';
+import { DrawerNavigator } from './DrawerNavigator';
 
 const Stack = createStackNavigator<RootStackParamList>();
 

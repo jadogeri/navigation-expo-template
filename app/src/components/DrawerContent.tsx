@@ -104,7 +104,7 @@ import { useAppContext } from '../contexts/ThemeContext';
                             />
                         )}
                         label="Home"
-                        onPress={() => { props.navigation.navigate('Home') }}
+                        onPress={() => { props.navigation.navigate('HomeDrawer') }}
                     />
                     <DrawerItem
                         icon={({ color, size }) => (
@@ -115,7 +115,7 @@ import { useAppContext } from '../contexts/ThemeContext';
                             />
                         )}
                         label="Profile"
-                        onPress={() => { props.navigation.navigate('Profile') }}
+                        onPress={() => { props.navigation.navigate('ProfileDrawer') }}
                     />
                     <DrawerItem
                         icon={({ color, size }) => (
@@ -126,7 +126,7 @@ import { useAppContext } from '../contexts/ThemeContext';
                             />
                         )}
                         label="ChatRoom"
-                        onPress={() => { props.navigation.navigate('Chat') }}
+                        onPress={() => { props.navigation.navigate('SettingsDrawer') }}
                     />
                     
                     <DrawerItem
@@ -138,7 +138,7 @@ import { useAppContext } from '../contexts/ThemeContext';
                             />
                         )}
                         label="Settings"
-                        onPress={() => { props.navigation.navigate('Setting') }}
+                        onPress={() => { props.navigation.navigate('SettingsDrawer') }}
                     />
                     <DrawerItem
                         icon={({ color, size }) => (
@@ -149,7 +149,7 @@ import { useAppContext } from '../contexts/ThemeContext';
                             />
                         )}
                         label="Support"
-                        onPress={() => { props.navigation.navigate('Setting') }}
+                        onPress={() => { props.navigation.navigate('SettingsDrawer') }}
                     />
                 </Drawer.Section>
                 <Drawer.Section title="Preferences">

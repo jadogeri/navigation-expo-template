@@ -11,8 +11,8 @@ const Drawer = createDrawerNavigator<DrawerParamList>();
 
 export function DrawerNavigator() {
   return (
-    <Drawer.Navigator initialRouteName="HomeDrawer"
-              drawerContent={(props) => <DrawerContent {...props} />}
+    <Drawer.Navigator initialRouteName="HomeDrawer" //defaultStatus="open"
+               drawerContent={(props) => <DrawerContent {...props} />}
 
     >
       {/* The main content (tabs) goes here */}
