@@ -16,7 +16,8 @@ export type DrawerParamList = {
   HomeDrawer: undefined;
   ProfileDrawer: undefined;
   SettingsDrawer: undefined;
-  
+  ChatDrawer: undefined;
+
 };
 
 export type MaterialTopTabParamList = {

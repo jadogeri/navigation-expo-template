@@ -126,7 +126,7 @@ import { useAppContext } from '../contexts/ThemeContext';
                             />
                         )}
                         label="ChatRoom"
-                        onPress={() => { props.navigation.navigate('SettingsDrawer') }}
+                        onPress={() => { props.navigation.navigate('ChatDrawer') }}
                     />
                     
                     <DrawerItem

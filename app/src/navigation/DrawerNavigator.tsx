@@ -5,6 +5,7 @@ import { DrawerParamList } from '../types/navigation.types';
 import ProfileScreen from '../screens/ProfileScreen';
 import SettingsScreen from '../screens/SettingsScreen';
 import DrawerContent from "../components/DrawerContent";
+import ChatScreen from "../screens/ChatScreen";
 
 
 const Drawer = createDrawerNavigator<DrawerParamList>();
@@ -23,6 +24,8 @@ export function DrawerNavigator() {
       />
       <Drawer.Screen name="ProfileDrawer" component={ProfileScreen} options={{ title: 'Profile' }} />
       <Drawer.Screen name="SettingsDrawer" component={SettingsScreen} options={{ title: 'Settings' }} />
+      {/* <Drawer.Screen name="ChatDrawer" component={ChatScreen} options={{ title: 'Chat' }} /> */}
+
     </Drawer.Navigator>
   );
 }
