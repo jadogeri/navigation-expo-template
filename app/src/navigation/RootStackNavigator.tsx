@@ -5,6 +5,7 @@ import DetailsScreen from '../screens/DetailsScreen';
 import LoginScreen from '../screens/LoginScreen';
 import { RootStackParamList } from '../types/navigation.types';
 import { DrawerNavigator } from './DrawerNavigator';
+import ExploreScreen from "../screens/ExploreScreen";
 
 const Stack = createStackNavigator<RootStackParamList>();
 
@@ -20,6 +21,8 @@ export function RootStackNavigator() {
       {/* Other stack screens (e.g., details, login) */}
       <Stack.Screen name="Details" component={DetailsScreen} options={{ title: 'Details' }} />
       <Stack.Screen name="Login" component={LoginScreen} />
+      <Stack.Screen name="Explore" component={ExploreScreen} options={{ title: 'Explore' }} />
+
     </Stack.Navigator>
   );
 }

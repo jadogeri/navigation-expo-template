@@ -1,6 +1,6 @@
 // types.tsx
 
-import type { NativeStackScreenProps } from '@react-navigation/native-stack';
+import type { NativeStackNavigationProp, NativeStackScreenProps } from '@react-navigation/native-stack';
 import type { NavigatorScreenParams } from '@react-navigation/native';
 
 import type { BottomTabScreenProps } from '@react-navigation/bottom-tabs';
@@ -62,7 +62,9 @@ export type RootStackParamList = {
   MainApp: undefined;
   Login: undefined; // Example for an auth flow
   Details: { itemId: string }; // Example with params
+  Explore: undefined
 };
 
+export type RootStackNavigationProp = NativeStackNavigationProp<RootStackParamList>;
 // Define props for individual screens in the stack (optional, but good practice)
 export type ModalScreenProps = NativeStackScreenProps<RootStackParamList, 'Modal'>;
