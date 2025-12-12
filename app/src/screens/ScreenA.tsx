@@ -1,14 +1,25 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import * as React from 'react';
+import { View, Text, StyleSheet } from 'react-native';
 
 const ScreenA = () => {
   return (
-    <View>
-      <Text>ScreenA</Text>
+    <View style={styles.container}>
+      <Text style={styles.text}>Welcome to Screen A!</Text>
     </View>
-  )
-}
+  );
+};
 
-export default ScreenA
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#e0f7fa',
+  },
+  text: {
+    fontSize: 20,
+    fontWeight: 'bold',
+  },
+});
 
-const styles = StyleSheet.create({})
+export default ScreenA;
