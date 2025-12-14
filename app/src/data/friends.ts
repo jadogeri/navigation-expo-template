@@ -19,5 +19,15 @@ export const FRIENDS: Friend[] = [
   { id: 8, name: 'Hannah Montana', avatarUrl: 'i.pravatar.cc', status: 'online', lastSeen: 'Just now' },
   { id: 9, name: 'Ian Malcolm', avatarUrl: 'i.pravatar.cc', status: 'offline', lastSeen: '1 month ago' },
   { id: 10, name: 'Jenna Marbles', avatarUrl: 'i.pravatar.cc0', status: 'online', lastSeen: '2 hours ago' },
+  { id: 11, name: 'Kate Winslet', avatarUrl: 'i.pravatar.cc', status: 'online', lastSeen: 'Just now' },
+  { id: 12, name: 'Kingsley coman', avatarUrl: 'i.pravatar.cc', status: 'offline', lastSeen: '1 hour ago' },
+  { id: 13, name: 'Liam Neesen', avatarUrl: 'i.pravatar.cc', status: 'away', lastSeen: '30 minutes ago' },
+  { id: 14, name: 'Lionel Richie', avatarUrl: 'i.pravatar.cc', status: 'online', lastSeen: 'Just now' },
+  { id: 15, name: 'Mandy Moore', avatarUrl: 'i.pravatar.cc', status: 'offline', lastSeen: '2 days ago' },
+  { id: 16, name: 'Nathaniel Clyne', avatarUrl: 'i.pravatar.cc', status: 'online', lastSeen: '10 minutes ago' },
+  { id: 17, name: 'Paul Rudd', avatarUrl: 'i.pravatar.cc', status: 'away', lastSeen: '5 minutes ago' },
+  { id: 18, name: 'Ritchie Rich', avatarUrl: 'i.pravatar.cc', status: 'online', lastSeen: 'Just now' },
+  { id: 19, name: 'Samuel L. Jackson', avatarUrl: 'i.pravatar.cc', status: 'offline', lastSeen: '1 month ago' },
+  { id: 20, name: 'Tony Montana', avatarUrl: 'i.pravatar.cc0', status: 'online', lastSeen: '2 hours ago' },
 ];
 // ... add hundreds more friends here for a large array ...

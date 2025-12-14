@@ -1,12 +1,13 @@
 // screens/SupportScreen.tsx
 
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Linking, SafeAreaView, ScrollView } from 'react-native';
-import { StackNavigationProp } from '@react-navigation/stack';
+import { View, Text, StyleSheet, TouchableOpacity, Linking, ScrollView } from 'react-native';
 import { RootStackParamList } from '../types/navigation.types';
 import { useToast } from 'react-native-toast-notifications';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { SafeAreaView } from 'react-native-safe-area-context';
+
 
 export type HomeScreenNavigationProp = NativeStackNavigationProp<RootStackParamList>;
 

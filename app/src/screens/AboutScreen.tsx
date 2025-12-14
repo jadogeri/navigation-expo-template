@@ -1,10 +1,11 @@
 // app/about.tsx or screens/AboutScreen.tsx
 import React from 'react';
-import { View, Text, StyleSheet, SafeAreaView, ScrollView, TouchableOpacity } from 'react-native';
-import * as Linking from 'expo-linking'; // Used for opening links
+import { View, Text, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { AboutStackParamList } from '../types/navigation.types';
-import { useNavigation } from 'expo-router';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { useNavigation } from '@react-navigation/native';
+
 
 
 export type AboutScreenNavigationProp = NativeStackNavigationProp<AboutStackParamList, "About">;

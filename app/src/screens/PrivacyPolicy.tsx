@@ -1,6 +1,8 @@
 // app/privacy.tsx or screens/PrivacyScreen.tsx
 import React from 'react';
-import { View, Text, StyleSheet, SafeAreaView, ScrollView, Platform } from 'react-native';
+import { View, Text, StyleSheet, ScrollView} from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
+
 
 export default function PrivacyPolicyScreen() {
   return (

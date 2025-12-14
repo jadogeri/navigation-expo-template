@@ -1,8 +1,10 @@
 import React from 'react';
-import { View, Text, StyleSheet, SafeAreaView, Image, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { useNavigation, NavigationProp } from '@react-navigation/native';
 // You might need an actual icon library like @expo/vector-icons
 import { Ionicons } from '@expo/vector-icons'; 
+import { SafeAreaView } from 'react-native-safe-area-context';
+
 
 
 // Define the types for your navigation stack (must match your RootStackParamList elsewhere)

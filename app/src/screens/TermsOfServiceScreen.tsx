@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-import { View, Text, ScrollView, Button, StyleSheet, SafeAreaView, Dimensions } from 'react-native';
+import { View, Text, ScrollView, Button, StyleSheet, Dimensions } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
+import { SafeAreaView } from 'react-native-safe-area-context';
+
 
 const TermsOfService = () => {
   const [accepted, setAccepted] = useState(false);

@@ -1,6 +1,7 @@
 // app/faq.tsx or screens/FAQScreen.tsx
 import React from 'react';
-import { SafeAreaView, StyleSheet, Text, View, FlatList } from 'react-native';
+import { StyleSheet, Text, View, FlatList } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import FAQItemComponent, { FAQItem } from '../components/FAQItemComponent';
 
 const largeFaqData: FAQItem[] = [
