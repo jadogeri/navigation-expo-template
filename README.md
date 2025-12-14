@@ -25,7 +25,7 @@ App is deployed to [ appetize.io](https://appetize.io/) website.
 
 Test app on the web using link below.
 
-[Link to test virtual app](https://appetize.io/app/b_crwtxey5olbqyho4huhdmpd6uq).
+[Link to test virtual app](https://appetize.io/app/b_lp235atfaqsg3o2bmvdzb4jko4).
 
 
 ##  License
