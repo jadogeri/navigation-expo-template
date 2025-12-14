@@ -21,45 +21,11 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import styles from './DrawerContentStyles';
 import { useAppContext } from '../contexts/ThemeContext';
 
-//import { Context as AuthContext } from '../../context/AuthContext'
-// import useToggleTheme from '../../hooks/useTheme';
-
-// import { signOut } from "firebase/auth";
-// import { signOut } from 'firebase/auth';
-// import AsyncStorage from '@react-native-async-storage/async-storage';
-// import { getAuth } from 'firebase/auth';
-
-// import { initializeApp } from "firebase/app";
-// import { firebaseConfig } from '../../config/firebase';
-
-// const value = initializeApp(firebaseConfig)
-// console.log(value)
  const DrawerContent = (props: any) => {
-      const { state: appState, toggleTheme } = useAppContext();
+    const { state: appState, toggleTheme } = useAppContext();
 
-    //const [toggleTheme, themeState] = useToggleTheme();
-    //const {isDarkTheme} = themeState;
-
-    // console.log("theme state in drawer",JSON.stringify(themeState))
-    //const [isDarkTheme,setIsDarkTheme]=useState(false);
-    // const toggleTheme = () =>{
-    //     setIsDarkTheme(!isDarkTheme);
-    // }
-    //const { state,signout } = useContext(AuthContext);
-    //const { username, email, id } = state
     const paperTheme = useTheme();
-    // const auth = getAuth();
-    // const sign_out = ()=>{
 
-    //     signOut(auth)
-    //     .then(()=>{AsyncStorage.clear();
-    //                alert("user signed out")})
-    //     .catch((e)=> alert(e))
-    //    //navigation.navigate("Login")
-    // //    alert(typeof signOut);
-    // //    alert(signOut === undefined ? "yes":"no")
-      
-    // }
 
     return <View style={{ flex: 1 }}>
         <DrawerContentScrollView {...props} >
@@ -73,23 +39,21 @@ import { useAppContext } from '../contexts/ThemeContext';
                             size={50}
                         />
                         <View style={{ marginLeft: 15, flexDirection: 'column' }}>
-                            {/* <Title style={styles.title}>username === {username}</Title> */}
-                            <Caption style={styles.caption}>@j_doe</Caption>
-                            {/* <Caption style={styles.caption}>email === {email}</Caption>
-                            <Caption style={styles.caption}>id === {id}</Caption> */}
-
+                            <Title style={{...styles.title, color: appState.theme.colors.primary}}>John Doe</Title>
+                            <Caption style={{...styles.caption, color: appState.theme.colors.text}}>@j_doe</Caption>
+                            {/* <Caption style={styles.caption}>johndoe@gmail.com</Caption> */}
 
                         </View>
                     </View>
 
                     <View style={styles.row}>
                         <View style={styles.section}>
-                            <Paragraph style={[styles.paragraph, styles.caption]}>80</Paragraph>
-                            <Caption style={styles.caption}>Following</Caption>
+                            <Paragraph style={[styles.paragraph, styles.caption,{color: appState.theme.colors.text}]}>80</Paragraph>
+                            <Caption style={[styles.caption, {color: appState.theme.colors.text}]}>Following</Caption>
                         </View>
                         <View style={styles.section}>
-                            <Paragraph style={[styles.paragraph, styles.caption]}>100</Paragraph>
-                            <Caption style={styles.caption}>Followers</Caption>
+                            <Paragraph style={[styles.paragraph, styles.caption,{color: appState.theme.colors.text}]}>100</Paragraph>
+                            <Caption style={[styles.caption,{color: appState.theme.colors.text}]}>Followers</Caption>
                         </View>
                     </View>
                 </View>
@@ -99,7 +63,7 @@ import { useAppContext } from '../contexts/ThemeContext';
                         icon={({ color, size }) => (
                             <Icon
                                 name="home-outline"
-
+                                color={color}
                                 size={size}
                             />
                         )}
@@ -120,13 +84,24 @@ import { useAppContext } from '../contexts/ThemeContext';
                     <DrawerItem
                         icon={({ color, size }) => (
                             <Icon
-                                name="bookmark-outline"
+                                name="chatbox-ellipses-outline"
                                 color={color}
                                 size={size}
                             />
                         )}
                         label="ChatRoom"
                         onPress={() => { props.navigation.navigate('ChatDrawer') }}
+                    />
+                    <DrawerItem
+                        icon={({ color, size }) => (
+                            <Icon
+                                name="people-outline"
+                                color={color}
+                                size={size}
+                            />
+                        )}
+                        label="Friends"
+                        onPress={() => { props.navigation.navigate('FriendsDrawer') }}
                     />
                     
                     <DrawerItem
@@ -149,7 +124,7 @@ import { useAppContext } from '../contexts/ThemeContext';
                             />
                         )}
                         label="Support"
-                        onPress={() => { props.navigation.navigate('SettingsDrawer') }}
+                        onPress={() => { props.navigation.navigate('SupportDrawer') }}
                     />
                 </Drawer.Section>
                 <Drawer.Section title="Preferences">
@@ -157,7 +132,9 @@ import { useAppContext } from '../contexts/ThemeContext';
                      toggleTheme();
                     }}>
                         <View style={styles.preference}>
-                            <Text>Dark Theme</Text>
+                            <Text style={{color: appState.theme.colors.text}}>
+                                {appState.isDark? "Dark Theme": "Light Theme"}
+                            </Text>
                             <View pointerEvents="none">
                                 <Switch value={appState.isDark} />
                            

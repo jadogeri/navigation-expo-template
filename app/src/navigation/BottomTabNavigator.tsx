@@ -22,10 +22,10 @@ export function BottomTabsNavigator() {
         tabBarInactiveBackgroundColor:"green"
       }}  >
       <BottomTab.Screen name="HomeTab" component={HomeScreen}           
-        options={{ tabBarIcon: () => (<Icon name="home" size={26} color="gold" />) }}
+        options={{ tabBarIcon: () => (<Icon name="home" size={26} color="gold" />), title:"Home"  }}
         />
       <BottomTab.Screen name="FeedTab" component={FeedScreen}
-        options={{ tabBarIcon: () => (<Icon name="settings" size={26} color="gold" />) }}
+        options={{ tabBarIcon: () => (<Icon name="newspaper-outline" size={26} color="gold" />), title:"Feed" }}
 
        />
       {/* Nest the Material Top Tabs here */}

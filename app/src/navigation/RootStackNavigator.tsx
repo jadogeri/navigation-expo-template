@@ -6,6 +6,7 @@ import LoginScreen from '../screens/LoginScreen';
 import { RootStackParamList } from '../types/navigation.types';
 import { DrawerNavigator } from './DrawerNavigator';
 import ExploreScreen from "../screens/ExploreScreen";
+import SupportScreen from "../screens/SupportScreen";
 
 const Stack = createStackNavigator<RootStackParamList>();
 

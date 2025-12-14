@@ -17,7 +17,8 @@ export type DrawerParamList = {
   ProfileDrawer: undefined;
   SettingsDrawer: undefined;
   ChatDrawer: undefined;
-
+  SupportDrawer: undefined;
+  FriendsDrawer: undefined;
 };
 
 export type MaterialTopTabParamList = {
@@ -26,7 +27,6 @@ export type MaterialTopTabParamList = {
 };
 
 // Define screen props for individual screens (optional, but helpful)
-export type DetailsScreenProps = StackScreenProps<RootStackParamList, 'Details'>;
 
 // Composite types for nested navigators (useful for screens deep in the hierarchy)
 export type TopTabScreenProps<T extends keyof MaterialTopTabParamList> = CompositeScreenProps<
@@ -61,9 +61,37 @@ export type RootStackParamList = {
   Modal: { userId: string }; // Another screen in the stack
   MainApp: undefined;
   Login: undefined; // Example for an auth flow
-  Details: { itemId: string }; // Example with params
   Explore: undefined
+  FAQ: undefined;
 };
+
+// Define types for the root stack screens
+export type DrawerStackParamList = {
+  Support: undefined
+  FAQ: undefined;
+};
+
+export type SettingsStackParamList = {
+  Support: undefined
+  Help: undefined;
+  About: undefined;
+  Profile: undefined;
+  Privacy: undefined;
+  Settings:undefined;
+};
+
+export type AboutStackParamList = {
+  About: undefined;
+  TermsOfService: undefined;
+  Privacy: undefined;
+};
+
+export type FriendsStackParamList = {
+  FriendsList: undefined;
+  FriendsDetail: { id: number };
+};
+
+
 
 export type RootStackNavigationProp = NativeStackNavigationProp<RootStackParamList>;
 // Define props for individual screens in the stack (optional, but good practice)

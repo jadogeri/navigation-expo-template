@@ -2,6 +2,12 @@ import React, { useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Switch, SafeAreaView, ScrollView } from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import { useNavigation } from '@react-navigation/native';
+import { SettingsStackParamList } from '../types/navigation.types';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+
+export type SettingsScreenNavigationProp = NativeStackNavigationProp<SettingsStackParamList, "Settings">;
+
 
 // Define the type for a single settings item
 interface SettingsItemProps {
@@ -42,12 +48,14 @@ const SettingsItem: React.FC<SettingsItemProps> = ({
 const SettingsScreen: React.FC = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [receiveNotifications, setReceiveNotifications] = useState(true);
-
-  // Example navigation handler (assuming you have React Navigation set up)
-  const handleNavigation = (screenName: string) => {
+  const navigation = useNavigation<SettingsScreenNavigationProp>();
+  // Example navigation handler (assuming you have React Navigation set up)s
+  const handleNavigation = (screenName: keyof SettingsStackParamList) => {
     console.log(`Navigate to ${screenName}`);
     // Example: navigation.navigate(screenName)
+    navigation.navigate(screenName);
   };
+  
 
   return (
     <SafeAreaView style={styles.container}>
